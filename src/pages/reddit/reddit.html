@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color='secondary'>
+    <ion-title align='center'>
+      Reddit
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <!-- For loop -->
+  <ion-item *ngFor = "let feeds of feedsArray" (click)= "viewFeed(feeds.data)">
+
+    <!-- // Thumbnail on left-side -->
+    <ion-thumbnail item-left>
+      <img src="{{feeds.data.thumbnail}}">
+    </ion-thumbnail>
+
+    <!-- // Feed title -->
+    <h2>{{feeds.data.title}}</h2>
+
+    <!-- // Thumbs up and down and comments-->
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{feeds.data.ups}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-down"></ion-icon>
+          <div>{{feeds.data.downs}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{feeds.data.num_comments}}</div>
+        </button>
+      </ion-col>
+         </ion-row>
+  </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title align='center'>
+      {{feed.author}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <img src="{{feed.preview.images[0].source.url}}">
+    <ion-card-content>
+      <ion-card-title>
+      {{feed.title}}
+      </ion-card-title>
+    </ion-card-content>
+
+    <ion-row>
+      <!-- Likes -->
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{feed.ups}} Likes</div>
+        </button>
+      </ion-col>
+      <!-- Comments -->
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="text"></ion-icon>
+          <div>{{feed.num_comments}} Comments</div>
+        </button>
+      </ion-col>
+         </ion-row>
+       </ion-card>
+
+</ion-content>
